@@ -1,4 +1,4 @@
-package uz.unzosoft.composecleanarchitecture
+package uz.unzosoft.composecleanarchitecture.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
