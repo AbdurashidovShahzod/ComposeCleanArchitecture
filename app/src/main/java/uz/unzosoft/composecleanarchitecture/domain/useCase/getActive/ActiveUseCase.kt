@@ -21,13 +21,13 @@ class ActiveUseCase @Inject constructor(
 ) {
     operator fun invoke(): Flow<Resource<List<Active>>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<List<Active>>())
             val active = repository.getActive().map { activeDto -> activeDto.toActive() }
-            emit(Resource.Success(active))
+            emit(Resource.Success<List<Active>>(active))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage))
+            emit(Resource.Error<List<Active>>(e.localizedMessage))
         } catch (e: IOException) {
-            emit(Resource.Error("Check your internet!!!"))
+            emit(Resource.Error<List<Active>>("Check your internet!!!"))
         }
     }
 }

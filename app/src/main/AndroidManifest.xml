@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uz.unzosoft.composecleanarchitecture" >
+    package="uz.unzosoft.composecleanarchitecture">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:allowBackup="true"
         android:name=".presentation.app.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ComposeCleanArchitecture" >
+        android:theme="@style/Theme.ComposeCleanArchitecture">
         <activity
             android:name=".presentation.ui.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeCleanArchitecture.NoActionBar" >
+            android:theme="@style/Theme.ComposeCleanArchitecture.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

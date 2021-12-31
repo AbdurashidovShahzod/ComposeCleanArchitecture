@@ -23,13 +23,13 @@ class ActivesUseCase @Inject constructor(
 ) {
     operator fun invoke(activeId: String): Flow<Resource<ActiveDetails>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<ActiveDetails>())
             val active = repository.getActiveDetailById(activeId).toActiveDetail()
-            emit(Resource.Success(active))
+            emit(Resource.Success<ActiveDetails>(active))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage))
+            emit(Resource.Error<ActiveDetails>(e.localizedMessage))
         } catch (e: IOException) {
-            emit(Resource.Error("Check your internet!!!"))
+            emit(Resource.Error<ActiveDetails>("Check your internet!!!"))
         }
     }
 }
