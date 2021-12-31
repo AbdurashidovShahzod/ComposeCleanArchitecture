@@ -1,4 +1,4 @@
-package uz.unzosoft.composecleanarchitecture.domain.useCase.getActives
+package uz.unzosoft.composecleanarchitecture.domain.useCase.getActive
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
